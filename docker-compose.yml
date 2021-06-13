@@ -1,0 +1,25 @@
+version: "3.5"
+services: 
+    app:
+        build: .
+        links:
+            - mongo
+        ports: 
+            - "8000:8000"
+        volumes: 
+            - .:/opt/app
+            - /opt/app/node_modules
+        environment: 
+            HOST: "172.19.0.2"
+            DATABASE: "blog"
+        
+    mongo:
+        image: mongo
+        ports: 
+            - "27017:27017"
+        volumes: 
+            - mongodata:/data/db 
+        logging: 
+            driver: none
+volumes: 
+    mongodata:
