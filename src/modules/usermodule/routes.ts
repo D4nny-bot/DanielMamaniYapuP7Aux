@@ -27,6 +27,11 @@ class Routes {
         //app.route(`/${api}/posts/:id`).post(this.routesController.addPosts);
         app.route(`/${api}/posts`).get(this.routesController.getPosts);
         app.route(`/${api}/posts/:id`).delete(this.routesController.deletePosts);
+
+        //-----------------------IMAGE-----------------------
+        app.route(`/${api}/newImg`).post(this.routesController.newImage);
+        app.route(`/${api}/imagedata`).get(this.routesController.imageData);
+        app.route(`/${api}/getimage/:id`).get(this.routesController.getImage);
     }
 }
 export default Routes;

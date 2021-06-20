@@ -29,18 +29,6 @@ var jsonwebtokenSecurity = (req: Request, res: Response, next: NextFunction) => 
             next();
             return;
         }
-        /*if (req.url.toLowerCase()){
-            next();
-            return;
-        }*/
-        /*for (var i = 0; i < posts.length; i++) {
-            if (
-                req.url.toLowerCase().includes(posts[i].url.toLowerCase())
-            ) {
-                next();
-                return;
-            }
-        }*/
         res.status(300).json({ serverResponse: "Usted no cuenta con los servicios" });
     });
 }
